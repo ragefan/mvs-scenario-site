@@ -1,0 +1,14 @@
+Chaîne audio MVS 0.1.0
+======================
+
+Synoptique pas à pas de la chaîne audio d'une Neo Geo MVS MV1FZS, du reset au premier son, avec injection de
+pannes et diagnostic (Z80 ERROR, pas de son…).
+
+Hébergement : copier le contenu de ce dossier sur n'importe quel serveur web statique, puis ouvrir index.html.
+Essai local : `python3 -m http.server` dans ce dossier, puis http://localhost:8000/
+
+Crédits
+  Outil pensé par Ragefan
+  Relevé du cuivre MV1FZS : GI@NTS 2015, via PCB Net Tracer
+  Brochages : SVGPinout et NeoGeo Development Wiki
+  Polices IBM Plex (licence OFL)

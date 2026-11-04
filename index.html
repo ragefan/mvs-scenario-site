@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Chaîne audio MVS</title>
+  <meta name="description" content="Synoptique pas à pas de la chaîne audio d'une Neo Geo MVS MV1FZS, du reset au premier son, avec injection de pannes et diagnostic." />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%2314171a'/%3E%3Cpath d='M5 20h5l3-9 4 14 3-8 2 3h5' fill='none' stroke='%23ffb21e' stroke-width='2.6' stroke-linejoin='round' stroke-linecap='round'/%3E%3C/svg%3E" />
+  <script type="module" crossorigin src="./assets/index-D1fHZMas.js"></script>
+  <link rel="stylesheet" crossorigin href="./assets/index-CIKIrXz_.css">
+</head>
+<body>
+  <header class="bar" id="toolbar">
+    <div class="brand">
+      <span class="brand-name">Chaîne audio MVS</span>
+      <small id="board-name"></small>
+    </div>
+    <div class="transport" role="group" aria-label="Pas à pas">
+      <button class="tbtn" id="b-first" title="Début (Origine)" aria-label="Première étape">⏮</button>
+      <button class="tbtn" id="b-prev" title="Étape précédente (←)" aria-label="Étape précédente">◀</button>
+      <div id="step-counter" class="counter" aria-live="polite"></div>
+      <button class="tbtn" id="b-next" title="Étape suivante (→)" aria-label="Étape suivante">▶</button>
+      <button class="tbtn" id="b-last" title="Dernière étape (Fin)" aria-label="Dernière étape">⏭</button>
+      <button class="tbtn wide" id="b-play" aria-pressed="false" title="Lecture automatique (Espace)">Lecture</button>
+      <select id="speed" title="Vitesse de lecture" aria-label="Vitesse de lecture">
+        <option value="4500">Lent</option>
+        <option value="2600" selected>Normal</option>
+        <option value="1300">Rapide</option>
+      </select>
+    </div>
+    <div id="fault-chip" class="fault-chip" hidden></div>
+    <div class="seg" role="group" aria-label="Affichage">
+      <button id="b-follow" aria-pressed="true" title="La caméra suit l'action (C)">Suivi</button>
+      <button id="b-timing" aria-pressed="false" title="Chronogramme de l'étape (T)">Chronogramme</button>
+      <button id="b-sound" aria-pressed="true" title="Jouer le premier son (S)">Son</button>
+    </div>
+    <button class="tbtn wide" id="b-full" title="Plein écran (F)">Plein écran</button>
+    <button class="tbtn" id="b-help" title="Aide et raccourcis (?)" aria-label="Aide">?</button>
+  </header>
+
+  <main id="main">
+    <section id="stage" aria-label="Synoptique">
+      <div id="syn"></div>
+      <div id="loading">Routage des liaisons…</div>
+      <div class="tools">
+        <button class="tool" id="z-in" title="Zoom avant" aria-label="Zoom avant">+</button>
+        <button class="tool" id="z-out" title="Zoom arrière" aria-label="Zoom arrière">−</button>
+        <button class="tool" id="z-fit" title="Vue d'ensemble (double-clic)" aria-label="Vue d'ensemble">⤢</button>
+      </div>
+      <div id="legend" class="legend"></div>
+      <div id="banner" class="banner" hidden></div>
+      <div id="pkg-modal" class="modal" hidden></div>
+      <div id="help" class="modal help" hidden></div>
+    </section>
+    <aside id="side">
+      <div class="status">
+        <div class="crt" aria-label="Moniteur"><div id="screen"></div></div>
+        <div class="status-txt">
+          <div class="st-k">Moniteur</div>
+          <div id="screen-txt" class="st-v"></div>
+          <div class="st-k">Haut-parleur</div>
+          <div id="speaker" class="st-v"></div>
+        </div>
+      </div>
+      <nav class="tabs" role="tablist">
+        <button role="tab" data-tab="step">Étape</button>
+        <button role="tab" data-tab="fault">Pannes</button>
+        <button role="tab" data-tab="diag">Diagnostic</button>
+        <button role="tab" data-tab="part">Composant</button>
+      </nav>
+      <div id="panel" class="panel" role="tabpanel"></div>
+    </aside>
+  </main>
+
+  <footer id="foot">
+    <div id="timeline"></div>
+    <div id="timing" hidden></div>
+  </footer>
+</body>
+</html>
