@@ -1,5 +1,5 @@
-MVS audio chain 0.4.0
-=====================
+MVS Scenario 0.5.1
+==================
 
 Step-by-step diagram of the audio chain of a Neo Geo MVS MV1FZS, from reset to first sound, with fault
 injection and diagnosis (Z80 ERROR, no sound…).
