@@ -1,4 +1,4 @@
-MVS Scenario 0.6.1
+MVS Scenario 0.7.0
 ==================
 
 Step-by-step diagram of the audio chain of a Neo Geo MVS MV1FZS, from reset to first sound, with fault
