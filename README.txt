@@ -1,8 +1,9 @@
 MVS Scenario 0.7.0
 ==================
 
-Step-by-step diagram of the audio chain of a Neo Geo MVS MV1FZS, from reset to first sound, with fault
-injection and diagnosis (Z80 ERROR, no sound…).
+Step-by-step diagrams of a Neo Geo MVS MV1FZS at power-up: boot to first sound, sound test without a
+cartridge, BIOS crosshatch, and the neogeo-diag-bios tests (with and without the diag M1), with fault
+injection and diagnosis (Z80 ERROR, diag error codes, beep codes, no sound…).
 
 Hosting: copy the contents of this folder to any static web server, then open index.html.
 Local test: `python3 -m http.server` in this folder, then http://localhost:8000/
